@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
   "setup": "pnpm install --prefix backend && pnpm install --prefix frontend",
+  "setup:prod": "npm install --omit=dev --prefix backend && npm install --omit=dev --prefix frontend",
   "frontend:build": "pnpm --filter ./frontend run build",
+  "frontend:build:prod": "npm run build --prefix frontend",
   "serve": "pnpm --filter ./backend run start",
-  "start": "pnpm run setup && pnpm run frontend:build && pnpm run serve"
-}
-,
+  "serve:prod": "npm run start --prefix backend",
+  "start:dev": "pnpm run setup && pnpm run frontend:build && pnpm run serve",
+  "start": "npm run setup:prod && npm run frontend:build:prod && npm run serve:prod"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aarya-16/Chatterbox.git"
