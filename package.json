@@ -1,0 +1,25 @@
+{
+  "name": "mern-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "setup": "npm install --prefix backend && npm install --prefix frontend",
+  "frontend:build": "npm run build --prefix frontend",
+  "serve": "npm run start --prefix backend",
+  "deploy": "npm run setup && npm run frontend:build && npm run serve"
+}
+,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aarya-16/Chatterbox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aarya-16/Chatterbox/issues"
+  },
+  "homepage": "https://github.com/aarya-16/Chatterbox#readme"
+}
