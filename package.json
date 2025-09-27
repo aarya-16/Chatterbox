@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
   "setup": "npm install --prefix backend && npm install --prefix frontend",
-  "setup:prod": "npm install --omit=dev --prefix backend --omit=dev && npm install --omit=dev --prefix frontend",
+  "setup:prod": "npm install --omit=dev --prefix backend && npm install --omit=dev --prefix frontend",
   "frontend:build": "npm run build --prefix frontend",
   "serve": "npm run start --prefix backend",
   "start:dev": "npm run setup && npm run frontend:build && npm run serve",
