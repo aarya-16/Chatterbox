@@ -4,7 +4,7 @@ import path from "path";
 
 import authRouter from './routes/auth.route.js';
 import messageRouter from './routes/message.route.js';
-import { log } from 'console';
+import connectDB from './db/index.js';
 
 dotenv.config()
 
@@ -12,6 +12,8 @@ const app = express();
 const __dirname = path.resolve();
 
 const port = process.env.PORT;
+
+app.use(express.json());
 
 app.get('/health', (req, res)=> {
     res.send("App working!")
@@ -28,6 +30,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.listen(port || 3000, () => 
+app.listen(port || 3000, () => {
     console.log(`Server started on port ${port}`)
-);
+    connectDB();
+});
