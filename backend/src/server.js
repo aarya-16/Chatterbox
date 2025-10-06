@@ -16,7 +16,7 @@ const port = process.env.PORT;
 app.use(express.json());
 
 app.get('/health', (req, res)=> {
-    res.send("App working!")
+    res.status(200).json({message: "App working!"})
 })
 
 app.use('/api/auth', authRouter)
